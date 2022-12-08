@@ -14,3 +14,4 @@ spec:
         port:
           number: 80
         host: frontend.default.svc.cluster.local
+      weight: 20
