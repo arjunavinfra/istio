@@ -237,10 +237,12 @@ spec:
   selector:
     matchLabels:
       app: frontend
+      version: v1
   template:
     metadata:
       labels:
         app: frontend
+        version: v1
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
@@ -875,18 +877,31 @@ spec:
   selector:
     matchLabels:
       app: frontend
-      version: 1.0.0
+      version: v2
   template:
     metadata:
       labels:
         app: frontend
-        version: 1.0.0
+        version: v2
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
+      serviceAccountName: default
+      securityContext:
+        fsGroup: 1000
+        runAsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 1000
       containers:
         - name: server
-          image: gcr.io/tetratelabs/boutique-frontend:1.0.0
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - all
+            privileged: false
+            readOnlyRootFilesystem: true
+          image: gcr.io/google-samples/microservices-demo/frontend:v0.4.1
           ports:
           - containerPort: 8080
           readinessProbe:
@@ -922,6 +937,14 @@ spec:
             value: "checkoutservice:5050"
           - name: AD_SERVICE_ADDR
             value: "adservice:9555"
+          # # ENV_PLATFORM: One of: local, gcp, aws, azure, onprem, alibaba
+          # # When not set, defaults to "local" unless running in GKE, otherwies auto-sets to gcp 
+          # - name: ENV_PLATFORM 
+          #   value: "aws"
+          - name: ENABLE_PROFILER
+            value: "0"
+          # - name: CYMBAL_BRANDING
+          #   value: "true"
           resources:
             requests:
               cpu: 100m
