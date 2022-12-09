@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   hosts:
-  - "*"
+  - "onlineboutique.example.com"
   gateways:
   - my-gateway
   http:
@@ -13,12 +13,12 @@ spec:
     - destination:
         port:
           number: 80
-        subset: v1
+        subset: v2
         host: frontend.default.svc.cluster.local
-      weight: 20
+      weight: 50
     - destination:
         port:
           number: 80
-        subset: v2
+        subset: v1
         host: frontend.default.svc.cluster.local
-      weight: 20
+      weight: 50
