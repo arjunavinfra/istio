@@ -1,4 +1,6 @@
-**Setup**
+**Setup cluster and istio configuration**
+
+specifications 
 
 - Provision a 4 node(1 master, 3 workers) kind cluster.
 - Fork the repository https://github.com/hr1sh1kesh/online-boutique and deploy the application on your cluster.
@@ -9,7 +11,7 @@
 
 
 
-  Run the script Deploy.sh to setup the cluster with above specification 
+  `#Run the script Deploy.sh to setup the cluster with above specification` 
   
   ```
   Deploy.sh
