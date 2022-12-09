@@ -1,4 +1,4 @@
-#Setup
+**Setup**
 
 Provision a 4 node(1 master, 3 workers) kind cluster.
 Fork the repository https://github.com/hr1sh1kesh/online-boutique and deploy the application on your cluster.
@@ -13,7 +13,7 @@ Inject the Istio sidecar in your application.
   Deploy.sh
   ``` 
 
-#Task 1
+**#Task 1**
 
 Gateways:
 Expose the frontend service of the application using the Istio-ingress gateway.
@@ -23,7 +23,7 @@ The host to be used is "onlineboutique.example.com" for the Ingress gateway. Any
   kubectl apply -f Task-1[Gateways]/
   ```
 
-#Task 2
+**#Task 2**
 
 Traffic routing:
 Split the traffic between the frontend and frontend-v2 service by 50%.
@@ -33,7 +33,7 @@ The way to verify that this works is when 50% of the requests would show the lan
   kubectl apply -f Task-2[Traffic-routing]/
   ```
 
-#Task 3
+**#Task 3**
 
 Traffic Routing:
 Route traffic to the based on the browser being used.
@@ -44,7 +44,7 @@ Hint: use the user-agent HTTP header added by the browser.
   kubectl apply -f Task-3[Traffic-Routing-user-agent]/
   ```
   
-Task 4
+**#Task 4**
 
 Timeout:
 This is a slightly different lab. You need to tighten the boundaries of acceptable latency in this lab.
@@ -54,7 +54,7 @@ Delete the productcatalogservice. There is a lot of latency between the frontend
   kubectl apply -f Task-4[Timeout]
   ```
   
-Task 5
+**#Task 5**
 
 TLS:
 Setup a TLS ingress gateway for the frontend service. Generate self signed certificates and add them to the Ingress Gateway for TLS communication.
