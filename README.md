@@ -17,6 +17,12 @@ specifications
   Deploy.sh
   ``` 
 
+Istio Traffic can be trace using kilali dashboard 
+
+```
+istioctl dashboard kiali 
+```
+
 **#Task 1**
 
 Gateways:
