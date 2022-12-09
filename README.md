@@ -1,10 +1,10 @@
 **Setup**
 
-Provision a 4 node(1 master, 3 workers) kind cluster.
-Fork the repository https://github.com/hr1sh1kesh/online-boutique and deploy the application on your cluster.
-Setup a loadbalancer locally on kind (check instructions for installing metallb)
-Install Istio 1.10 on the cluster (Do not do this step before you deploy the application.)
-Inject the Istio sidecar in your application.
+- Provision a 4 node(1 master, 3 workers) kind cluster.
+- Fork the repository https://github.com/hr1sh1kesh/online-boutique and deploy the application on your cluster.
+- Setup a loadbalancer locally on kind (check instructions for installing metallb)
+- Install Istio 1.10 on the cluster (Do not do this step before you deploy the application.)
+- Inject the Istio sidecar in your application.
 
   
   Run the script Deploy.sh to setup the cluster with above specification 
