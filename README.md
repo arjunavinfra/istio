@@ -6,7 +6,9 @@
 - Install Istio 1.10 on the cluster (Do not do this step before you deploy the application.)
 - Inject the Istio sidecar in your application.
 
-  
+
+
+
   Run the script Deploy.sh to setup the cluster with above specification 
   
   ```
