@@ -67,6 +67,7 @@ Route traffic to the based on the browser being used.
 When you use Firefox the Gateway routes to the frontend service whereas it routes to the frontend-v2 pods if it is accessed via Chrome.
 Hint: use the user-agent HTTP header added by the browser.
 
+Deploy
   ```
   kubectl apply -f Task-3[Traffic-Routing-user-agent]/
   
@@ -96,7 +97,7 @@ Deploy
   
   ```
   
-  Testing 
+  For testing  
   ```
   ip=`kubectl get svc -n istio-system | grep istio-ingressgateway | awk '{print $4}'`
   kubectl delete pods -l app=productcatalogservice
@@ -124,7 +125,7 @@ step 2: Modify the gateway with ssl details
   
 ```
 
-Testing 
+For testing  
 
 ```
  curl --insecure https://onlineboutique.example.com -s -o /dev/null -v
